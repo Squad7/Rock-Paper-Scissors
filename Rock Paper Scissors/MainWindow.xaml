@@ -5,8 +5,86 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Rock_Paper_Scissors"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" Background="#FFD6FBF8">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+        </Grid.ColumnDefinitions>
+
+        <Viewbox Grid.Column="1"  Grid.Row="0">
+            <Image x:Name="Rock" Height="40" Width="30" Source="Resources/Rock.png" MouseDown="Rock_MouseDown"/>
+        </Viewbox>
+
+        <Viewbox Grid.Column="2" Grid.Row="0">
+            <Image x:Name="Scissors" Height="100" Width="100" Source="Resources/Scissors.png" MouseDown="Scissors_MouseDown"/>
+        </Viewbox>
+
+        <Viewbox Grid.Row="0">
+            <Image x:Name="Paper" Height="100" Width="100" Source="Resources/Paper.png" MouseDown="Paper_MouseDown"/>
+        </Viewbox>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            
+            <Viewbox Grid.Column="2"  Grid.Row="1" >
+                <TextBlock Text="Vs" Height="40" Width="20" FontSize="18" FontWeight="Bold" TextAlignment="Center"/>
+            </Viewbox>
+
+            <Viewbox Grid.Column="1" Grid.Row="1">
+                <Image x:Name="UserIMG"  Height="100" Width="100" />
+            </Viewbox>
+
+            <Viewbox Grid.Column="3" Grid.Row="1">
+                <Image x:Name="cpuIMG"  Height="100" Width="100" />
+            </Viewbox>
+
+            <Viewbox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+                <TextBlock x:Name="UserLabel"  Text="User"  Width="35" Height="19" TextAlignment="Center" FontWeight="Bold"/>
+            </Viewbox>
+
+            <Viewbox Grid.Column="3" Grid.Row="0" Grid.ColumnSpan="2">
+                <TextBlock x:Name="CPULabel"  Text="CPU"  Width="35" Height="19" TextAlignment="Center" FontWeight="Bold"/>
+            </Viewbox>
+            
+            <Viewbox Grid.Column="0" Grid.Row="1">
+                <TextBlock x:Name="USERScoreBox"  Text="0" Height="40" Width="20" FontSize="18" TextAlignment="Center"/>
+            </Viewbox>
+
+            <Viewbox Grid.Column="5" Grid.Row="1">
+                <TextBlock x:Name="CPUScoreBox"  Text="0" Height="40" Width="20" FontSize="18" TextAlignment="Center"/>
+            </Viewbox>
+
+            <Viewbox Grid.Column="2">
+                <Label x:Name="YouWinLabel" Content="You Win!"  BorderBrush="#FFFF4747" Visibility="Hidden" BorderThickness="2" Height="40" Width="90" FontSize="18" FontWeight="Bold"/>
+            </Viewbox>
+
+            <Viewbox Grid.Column="2">
+                <Label x:Name="YouLoseLabel" Content="You Lose"  BorderBrush="#FFFF4747" Visibility="Hidden" BorderThickness="2" Height="40" Width="90" FontSize="18" FontWeight="Bold"/>
+            </Viewbox>
+
+            <Viewbox Grid.Column="2">
+                <Label x:Name="DrawLabel" Content="Draw"  BorderBrush="#FFFF4747" Visibility="Hidden" BorderThickness="2" Height="40" Width="60" FontSize="18" FontWeight="Bold"/>
+            </Viewbox>
+
+        </Grid>
+
     </Grid>
 </Window>
